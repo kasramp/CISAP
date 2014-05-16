@@ -22,7 +22,7 @@ for(i=1;i<=x;i++)
 printw("=");
 getyx(stdscr,yy,xx);
 move(yy,((x-57)/2));
-printw("CISAP Copyright (c) Written By Kasra Madadipouya Feb-2012.\n");
+printw("CISAP Copyleft Written By Kasra Madadipouya Feb-2012.\n");
 getyx(stdscr,yy,xx);
 move(yy,((x-42)/2));
 printw("The program uses FMOD API version %08x\n",(FMOD_VERSION));
