@@ -1,7 +1,7 @@
 
 				========================================================================
-					   CISAP(CISAP Is Simple Audio Player) (r12).
-					   Copyleft Written By Kasra Madadipouya Feb-2012.
+					   CISAP(CISAP Is Simple Audio Player) (v0.1).
+					   Copyleft Written By Kasra Madadipouya May-2015.
 					   The program uses FMOD API version 4.400
 				========================================================================
 

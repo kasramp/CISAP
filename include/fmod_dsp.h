@@ -1,5 +1,5 @@
 /* ========================================================================================== */
-/* FMOD Ex - DSP header file. Copyright (c), Firelight Technologies Pty, Ltd. 2004-2011.      */
+/* FMOD Ex - DSP header file. Copyright (c), Firelight Technologies Pty, Ltd. 2004-2014.      */
 /*                                                                                            */
 /* Use this header if you are interested in delving deeper into the FMOD software mixing /    */
 /* DSP engine.  In this header you can find parameter structures for FMOD system reigstered   */
@@ -68,6 +68,7 @@ typedef enum
     FMOD_DSP_TYPE_TREMOLO,            /* This unit produces a tremolo / chopper effect on the sound. */
     FMOD_DSP_TYPE_LADSPAPLUGIN,       /* This unit allows the use of LADSPA standard plugins. */
     FMOD_DSP_TYPE_HIGHPASS_SIMPLE,    /* This unit filters sound using a simple highpass with no resonance, but has flexible cutoff and is fast. */
+    FMOD_DSP_TYPE_HARDWARE = 1000,    /* Offset that platform specific FMOD_HARDWARE DSPs will start at. */
     FMOD_DSP_TYPE_FORCEINT = 65536    /* Makes sure this enum is signed 32bit. */
 } FMOD_DSP_TYPE;
 
@@ -108,8 +109,11 @@ typedef struct FMOD_DSP_PARAMETERDESC
     When creating a DSP unit, declare one of these and provide the relevant callbacks and name for FMOD to use when it creates and uses a DSP unit of this type.
 
     [REMARKS]
+    <br>
     Members marked with [r] mean the variable is modified by FMOD and is for reading purposes only.  Do not change this value.<br>
     Members marked with [w] mean the variable can be written to.  The user can set the value.<br>
+    <br>
+    IMPORTANT: The 'paramdesc' member should point to static memory, as FMOD references the data internally using the pointer provided.  Do not store these parameter description structures on the stack, or in heap memory that is freed while FMOD is using it.<br>
     <br>
     There are 2 different ways to change a parameter in this architecture.<br>
     One is to use DSP::setParameter / DSP::getParameter.  This is platform independant and is dynamic, so new unknown plugins can have their parameters enumerated and used.<br>

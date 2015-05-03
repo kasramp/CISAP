@@ -1,0 +1,7 @@
+########################################
+#	  New changes in v0.1	       #
+########################################
+
+- Updating FMOD Ex library to version 4.44.52.
+- Player loader screen.
+- Readme update.
