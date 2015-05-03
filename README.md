@@ -2,7 +2,7 @@
 				========================================================================
 					   CISAP(CISAP Is Simple Audio Player) (v0.1).
 					   Copyleft Written By Kasra Madadipouya May-2015.
-					   The program uses FMOD API version 4.400
+					   The program uses FMOD API version 4.44.52
 				========================================================================
 
 This program will be distributed under GNU/GPL V3 License as soon as the writer of program acheive to stable version of this player.
@@ -62,6 +62,7 @@ The options and key which are used in this program are:
 
 
 TO DO
+> Moving CISAP to new FMOD lib & change language from C to C++
 > Saving favourited song(s) from online streams to hard disk (Live stream downloader). [Delayed/Canceled]
 > Add play song(s) from Audio CD
 > Writing complete "man" page for program.
