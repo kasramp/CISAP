@@ -73,3 +73,18 @@ TO DO
 Contact
 if you want to report bug(s) or contribute to develop this software you can contact me in one of the these ways.
 > Sending mail: "kasra@madadipouya.com" OR "kasra_mp@live.com".
+
+License
+=======
+InternetWayBackMachine is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License version 3
+as published by the Free Software Foundation.
+
+InternetWayBackMachine is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.  <http://www.gnu.org/licenses/>
+
+Author(s):
+
+© 2015 Kasra Madadipouya <kasra@madadipouya.com>
