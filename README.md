@@ -5,8 +5,6 @@
 					   The program uses FMOD API version 4.400
 				========================================================================
 
-This program will be distributed under GNU/GPL V3 License as soon as the writer of program acheive to stable version of this player.
-
 
 In order to install and use this software follow below instruction
 > Be sure that "gcc" and "g++" compiler were installed suceessfully installed on your computer.
@@ -72,3 +70,18 @@ TO DO
 Contact
 if you want to report bug(s) or contribute to develop this software you can contact me in one of the these ways.
 > Sending mail: "kasra@madadipouya.com" OR "kasra_mp@live.com".
+
+License
+=======
+CISAP is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License version 3
+as published by the Free Software Foundation.
+
+CISAP is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.  <http://www.gnu.org/licenses/>
+
+Author(s):
+
+© 2012 Kasra Madadipouya <kasra@madadipouya.com>
