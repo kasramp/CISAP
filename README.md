@@ -76,11 +76,11 @@ if you want to report bug(s) or contribute to develop this software you can cont
 
 License
 =======
-InternetWayBackMachine is free software; you can redistribute it and/or modify
+CISAP is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License version 3
 as published by the Free Software Foundation.
 
-InternetWayBackMachine is distributed in the hope that it will be useful,
+CISAP is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.  <http://www.gnu.org/licenses/>
