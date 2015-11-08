@@ -12,7 +12,7 @@
 # © 2012 Kasra Madadipouya <kasra@madadipouya.com>
 
 mp3:	mp3.c
-	gcc -O3 -o mp3 mp3.c lib/libfmodex64.so -pthread -lcurses
+	gcc -O3 -o mp3 mp3.c lib/libfmodex64.so -pthread -lncurses
 
 run:
 	./mp3
