@@ -12,7 +12,11 @@
 # © 2012 Kasra Madadipouya <kasra@madadipouya.com>
 
 mp3:	mp3.c
-	gcc -O3 -o mp3 mp3.c lib/libfmodex64.so -pthread -lncurses
+	gcc -O3 -o mp3 mp3.c /lib/libfmodex64.so -pthread -lncurses
+
+make install:
+	cp -r . ~/.cisap
+	cp -r lib/* /media/
 
 run:
 	./mp3
