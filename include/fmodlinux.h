@@ -25,11 +25,11 @@
     [SEE_ALSO]
     System::init
 ]
-*/
+ */
 typedef struct FMOD_LINUX_EXTRADRIVERDATA
 {
-    const char  *output_driver_arguments;    /* ALSA Only - Arguments to apply to the selected output driver */
-    const char  *record_driver_arguments;    /* ALSA Only - Arguments to apply to the selected input (record) driver */
+	const char  *output_driver_arguments;    /* ALSA Only - Arguments to apply to the selected output driver */
+	const char  *record_driver_arguments;    /* ALSA Only - Arguments to apply to the selected input (record) driver */
 } FMOD_LINUX_EXTRADRIVERDATA;
 
 #endif

@@ -32,57 +32,57 @@
     FMOD_MEMBITS    
     FMOD_EVENT_MEMBITS
 ]
-*/
+ */
 typedef struct FMOD_MEMORY_USAGE_DETAILS
 {
-    unsigned int other;                          /* [out] Memory not accounted for by other types */
-    unsigned int string;                         /* [out] String data */
-    unsigned int system;                         /* [out] System object and various internals */
-    unsigned int plugins;                        /* [out] Plugin objects and internals */
-    unsigned int output;                         /* [out] Output module object and internals */
-    unsigned int channel;                        /* [out] Channel related memory */
-    unsigned int channelgroup;                   /* [out] ChannelGroup objects and internals */
-    unsigned int codec;                          /* [out] Codecs allocated for streaming */
-    unsigned int file;                           /* [out] File buffers and structures */
-    unsigned int sound;                          /* [out] Sound objects and internals */
-    unsigned int secondaryram;                   /* [out] Sound data stored in secondary RAM */
-    unsigned int soundgroup;                     /* [out] SoundGroup objects and internals */
-    unsigned int streambuffer;                   /* [out] Stream buffer memory */
-    unsigned int dspconnection;                  /* [out] DSPConnection objects and internals */
-    unsigned int dsp;                            /* [out] DSP implementation objects */
-    unsigned int dspcodec;                       /* [out] Realtime file format decoding DSP objects */
-    unsigned int profile;                        /* [out] Profiler memory footprint. */
-    unsigned int recordbuffer;                   /* [out] Buffer used to store recorded data from microphone */
-    unsigned int reverb;                         /* [out] Reverb implementation objects */
-    unsigned int reverbchannelprops;             /* [out] Reverb channel properties structs */
-    unsigned int geometry;                       /* [out] Geometry objects and internals */
-    unsigned int syncpoint;                      /* [out] Sync point memory. */
-    unsigned int eventsystem;                    /* [out] EventSystem and various internals */
-    unsigned int musicsystem;                    /* [out] MusicSystem and various internals */
-    unsigned int fev;                            /* [out] Definition of objects contained in all loaded projects e.g. events, groups, categories */
-    unsigned int memoryfsb;                      /* [out] Data loaded with preloadFSB */
-    unsigned int eventproject;                   /* [out] EventProject objects and internals */
-    unsigned int eventgroupi;                    /* [out] EventGroup objects and internals */
-    unsigned int soundbankclass;                 /* [out] Objects used to manage wave banks */
-    unsigned int soundbanklist;                  /* [out] Data used to manage lists of wave bank usage */
-    unsigned int streaminstance;                 /* [out] Stream objects and internals */
-    unsigned int sounddefclass;                  /* [out] Sound definition objects */
-    unsigned int sounddefdefclass;               /* [out] Sound definition static data objects */
-    unsigned int sounddefpool;                   /* [out] Sound definition pool data */
-    unsigned int reverbdef;                      /* [out] Reverb definition objects */
-    unsigned int eventreverb;                    /* [out] Reverb objects */
-    unsigned int userproperty;                   /* [out] User property objects */
-    unsigned int eventinstance;                  /* [out] Event instance base objects */
-    unsigned int eventinstance_complex;          /* [out] Complex event instance objects */
-    unsigned int eventinstance_simple;           /* [out] Simple event instance objects */
-    unsigned int eventinstance_layer;            /* [out] Event layer instance objects */
-    unsigned int eventinstance_sound;            /* [out] Event sound instance objects */
-    unsigned int eventenvelope;                  /* [out] Event envelope objects */
-    unsigned int eventenvelopedef;               /* [out] Event envelope definition objects */
-    unsigned int eventparameter;                 /* [out] Event parameter objects */
-    unsigned int eventcategory;                  /* [out] Event category objects */
-    unsigned int eventenvelopepoint;             /* [out] Event envelope point objects */
-    unsigned int eventinstancepool;              /* [out] Event instance pool memory */
+	unsigned int other;                          /* [out] Memory not accounted for by other types */
+	unsigned int string;                         /* [out] String data */
+	unsigned int system;                         /* [out] System object and various internals */
+	unsigned int plugins;                        /* [out] Plugin objects and internals */
+	unsigned int output;                         /* [out] Output module object and internals */
+	unsigned int channel;                        /* [out] Channel related memory */
+	unsigned int channelgroup;                   /* [out] ChannelGroup objects and internals */
+	unsigned int codec;                          /* [out] Codecs allocated for streaming */
+	unsigned int file;                           /* [out] File buffers and structures */
+	unsigned int sound;                          /* [out] Sound objects and internals */
+	unsigned int secondaryram;                   /* [out] Sound data stored in secondary RAM */
+	unsigned int soundgroup;                     /* [out] SoundGroup objects and internals */
+	unsigned int streambuffer;                   /* [out] Stream buffer memory */
+	unsigned int dspconnection;                  /* [out] DSPConnection objects and internals */
+	unsigned int dsp;                            /* [out] DSP implementation objects */
+	unsigned int dspcodec;                       /* [out] Realtime file format decoding DSP objects */
+	unsigned int profile;                        /* [out] Profiler memory footprint. */
+	unsigned int recordbuffer;                   /* [out] Buffer used to store recorded data from microphone */
+	unsigned int reverb;                         /* [out] Reverb implementation objects */
+	unsigned int reverbchannelprops;             /* [out] Reverb channel properties structs */
+	unsigned int geometry;                       /* [out] Geometry objects and internals */
+	unsigned int syncpoint;                      /* [out] Sync point memory. */
+	unsigned int eventsystem;                    /* [out] EventSystem and various internals */
+	unsigned int musicsystem;                    /* [out] MusicSystem and various internals */
+	unsigned int fev;                            /* [out] Definition of objects contained in all loaded projects e.g. events, groups, categories */
+	unsigned int memoryfsb;                      /* [out] Data loaded with preloadFSB */
+	unsigned int eventproject;                   /* [out] EventProject objects and internals */
+	unsigned int eventgroupi;                    /* [out] EventGroup objects and internals */
+	unsigned int soundbankclass;                 /* [out] Objects used to manage wave banks */
+	unsigned int soundbanklist;                  /* [out] Data used to manage lists of wave bank usage */
+	unsigned int streaminstance;                 /* [out] Stream objects and internals */
+	unsigned int sounddefclass;                  /* [out] Sound definition objects */
+	unsigned int sounddefdefclass;               /* [out] Sound definition static data objects */
+	unsigned int sounddefpool;                   /* [out] Sound definition pool data */
+	unsigned int reverbdef;                      /* [out] Reverb definition objects */
+	unsigned int eventreverb;                    /* [out] Reverb objects */
+	unsigned int userproperty;                   /* [out] User property objects */
+	unsigned int eventinstance;                  /* [out] Event instance base objects */
+	unsigned int eventinstance_complex;          /* [out] Complex event instance objects */
+	unsigned int eventinstance_simple;           /* [out] Simple event instance objects */
+	unsigned int eventinstance_layer;            /* [out] Event layer instance objects */
+	unsigned int eventinstance_sound;            /* [out] Event sound instance objects */
+	unsigned int eventenvelope;                  /* [out] Event envelope objects */
+	unsigned int eventenvelopedef;               /* [out] Event envelope definition objects */
+	unsigned int eventparameter;                 /* [out] Event parameter objects */
+	unsigned int eventcategory;                  /* [out] Event category objects */
+	unsigned int eventenvelopepoint;             /* [out] Event envelope point objects */
+	unsigned int eventinstancepool;              /* [out] Event instance pool memory */
 } FMOD_MEMORY_USAGE_DETAILS;
 
 
@@ -107,7 +107,7 @@ typedef struct FMOD_MEMORY_USAGE_DETAILS
     FMOD_EVENT_MEMBITS
     System::getMemoryInfo
 ]
-*/
+ */
 #define FMOD_MEMBITS_OTHER                       0x00000001  /* Memory not accounted for by other types */
 #define FMOD_MEMBITS_STRING                      0x00000002  /* String data */
 
@@ -156,7 +156,7 @@ typedef struct FMOD_MEMORY_USAGE_DETAILS
     FMOD_MEMBITS
     System::getMemoryInfo
 ]
-*/                                               
+ */
 #define FMOD_EVENT_MEMBITS_EVENTSYSTEM           0x00000001  /* EventSystem and various internals */
 #define FMOD_EVENT_MEMBITS_MUSICSYSTEM           0x00000002  /* MusicSystem and various internals */
 #define FMOD_EVENT_MEMBITS_FEV                   0x00000004  /* Definition of objects contained in all loaded projects e.g. events, groups, categories */
@@ -187,15 +187,15 @@ typedef struct FMOD_MEMORY_USAGE_DETAILS
 
 /* All event instance memory */
 #define FMOD_EVENT_MEMBITS_EVENTINSTANCE_GROUP   (FMOD_EVENT_MEMBITS_EVENTINSTANCE            | \
-                                                     FMOD_EVENT_MEMBITS_EVENTINSTANCE_COMPLEX | \
-                                                     FMOD_EVENT_MEMBITS_EVENTINSTANCE_SIMPLE  | \
-                                                     FMOD_EVENT_MEMBITS_EVENTINSTANCE_LAYER   | \
-                                                     FMOD_EVENT_MEMBITS_EVENTINSTANCE_SOUND)
+		FMOD_EVENT_MEMBITS_EVENTINSTANCE_COMPLEX | \
+		FMOD_EVENT_MEMBITS_EVENTINSTANCE_SIMPLE  | \
+		FMOD_EVENT_MEMBITS_EVENTINSTANCE_LAYER   | \
+		FMOD_EVENT_MEMBITS_EVENTINSTANCE_SOUND)
 
 /* All sound definition memory */
 #define FMOD_EVENT_MEMBITS_SOUNDDEF_GROUP        (FMOD_EVENT_MEMBITS_SOUNDDEFCLASS            | \
-                                                     FMOD_EVENT_MEMBITS_SOUNDDEFDEFCLASS      | \
-                                                     FMOD_EVENT_MEMBITS_SOUNDDEFPOOL)
+		FMOD_EVENT_MEMBITS_SOUNDDEFDEFCLASS      | \
+		FMOD_EVENT_MEMBITS_SOUNDDEFPOOL)
 /* [DEFINE_END] */
 
 #endif

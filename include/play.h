@@ -21,35 +21,41 @@ static int loop=1;
 static int begin;
 static int fin;
 static int ps;
+static int p_is_help;
 static char namefiles[2000][2000];
 int getloop()
 {
-return loop;
+	return loop;
 }
 void setloop(int x)
 {
-if(x>0)
-  loop=++x;
-else
-loop=x;
+	if(x>0)
+		loop=++x;
+	else
+		loop=x;
 }
 
-void setparam(int start,int end,char names[2000][2000],int pOs)
+void setparam(int start,int end,char names[2000][2000],int pOs, int is_help)
 {
-  int i;
-  begin=start;
-  fin=end;
-  ps=pOs;
-  for(i=begin;i<=fin;i++)
-   strcpy(namefiles[i],names[i]);
+	int i;
+	begin=start;
+	fin=end;
+	ps=pOs;
+	p_is_help = is_help;
+	for(i=begin;i<=fin;i++)
+		strcpy(namefiles[i],names[i]);
 }
 void getparam(int *start,int *end,char names[2000][2000],int *pOs)
 { 
-  int i;
-  (*start)=begin;
-  (*end)=fin;
-  (*pOs)=ps;
-  for(i=begin;i<=fin;i++)
-    strcpy(names[i],namefiles[i]);
+	int i;
+	(*start)=begin;
+	(*end)=fin;
+	(*pOs)=ps;
+	for(i=begin;i<=fin;i++)
+		strcpy(names[i],namefiles[i]);
+}
+int show_help()
+{
+	return p_is_help;
 }
 #endif
