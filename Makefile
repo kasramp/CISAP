@@ -16,7 +16,7 @@ mp3:	mp3.c
 
 make install:
 	cp -r . ~/.cisap
-	cp -r lib/* /media/
+	cp -r lib/* /lib/
 
 run:
 	./mp3
