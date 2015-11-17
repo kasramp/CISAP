@@ -115,7 +115,7 @@ void checktag(FMOD_TAG tag)
 }
 void print_help()
 {
-	printf("Usage:\tmp3 [options] [url|path/]filename\n");
+	printf("Usage:\tcisap [options] [url|path/]filename\n");
 	printf("\n");
 	printf("Basic options:\n");
 	printf(" --playlist <.m3u>\tplaying from list\n");
