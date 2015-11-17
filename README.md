@@ -1,7 +1,7 @@
 
 				========================================================================
 					   CISAP(CISAP Is Simple Audio Player) (v0.1).
-					   Copyleft Written By Kasra Madadipouya May-2015.
+					   Copyright © Written By Kasra Madadipouya 2012-2015.
 					   The program uses FMOD API version 4.44.52
 				========================================================================
 
@@ -16,7 +16,7 @@ In order to install and use this software follow below instruction
 > make.
 For run program after compiling it write "./mp3" in a console.
 
-The implicated tasks  that CISAP can do are:
+The implicated tasks  that cisap can do are:
 > Play most common Audio formats such as Ogg,Mp3,Wav,...(Unfortunately Wma <Microsoft Windows Meda Audio> extesion is not supported in this program).
 > Play Audio files from STANDARD playlist which has "m3u" extesnion.
 > If non STANDARD "m3u" file is given to software, player returns error that can't support the file. In order to convert none STANDARD playlist file to STANDARD one a program has been written by the programmer of this software as tool that is able to solve this problem and it is distrubuted with the software package.
@@ -62,7 +62,7 @@ The options and key which are used in this program are:
 
 
 TO DO
-> Moving CISAP to new FMOD lib & change language from C to C++
+> Moving cisap to new FMOD lib & change language from C to C++
 > Saving favourited song(s) from online streams to hard disk (Live stream downloader). [Delayed/Canceled]
 > Add play song(s) from Audio CD
 > Writing complete "man" page for program.
@@ -87,4 +87,4 @@ GNU General Public License for more details.  <http://www.gnu.org/licenses/>
 
 Author(s):
 
-© 2012 Kasra Madadipouya <kasra@madadipouya.com>
+© 2012-2015 Kasra Madadipouya <kasra@madadipouya.com>

@@ -13,14 +13,13 @@
 
 mp3:	mp3.c
 	gcc -O3 -o cisap mp3.c -Llib -l :libfmodex64.so -pthread -lncurses
-
 make install:
 	cp cisap /usr/bin/
 	cp -r lib/* /lib/
-
+	install -g 0 -o 0 -m 0644 man/cisap /usr/share/man/man1/cisap.1
+	gzip /usr/share/man/man1/cisap.1
 run:
 	./cisap
-
 clean:
 	rm -f cisap
 make uninstall:
@@ -34,3 +33,5 @@ make uninstall:
 	rm -rvf /lib/libfmodexL-4.44.52.so  
 	rm -rvf /lib/libfmodexL64.so          
 	rm -rvf /lib/libfmodex.so
+	rm -rvf /usr/local/man/man1/cisap.1*
+	rm -rvf /usr/share/man/man1/cisap.1*

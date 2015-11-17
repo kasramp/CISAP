@@ -36,7 +36,7 @@ void introprint()
 		printw("=");
 	getyx(stdscr,yy,xx);
 	move(yy,((x-57)/2));
-	printw("CISAP Copyleft Written By Kasra Madadipouya May-2015.\n");
+	printw("Cisap © Copyright Written By Kasra Madadipouya v0.1 2012-2015.\n");
 	getyx(stdscr,yy,xx);
 	move(yy,((x-42)/2));
 	printw("The program uses FMOD API version %08x\n",(FMOD_VERSION));
@@ -142,6 +142,6 @@ void print_help()
 	printf(" 6\t\t\tactivate/diactivate 'Chorous' sound effect\n");
 	printf(" 7\t\t\tactivate/diactivate 'Parameq' sound effect\n");
 	printf("\n");
-	printf("CISAP v0.1 2012-2015 Kasra Madadipouya\n");
+	printf("Cisap v0.1 2012-2015 Kasra Madadipouya\n");
 }
 #endif
