@@ -1,20 +1,23 @@
 
 				========================================================================
-					   CISAP(CISAP Is Simple Audio Player) (v0.1).
-					   Copyright © Written By Kasra Madadipouya 2012-2015.
-					   The program uses FMOD API version 4.44.52
+					   CISAP(CISAP Is Simple Audio Player) (v0.2).
+					   Copyright © Written By Kasra Madadipouya 2012-2016.
+					   The program uses FMOD API version 00010705
 				========================================================================
 
 This program will be distributed under GNU/GPL V3 License as soon as the writer of program acheive to stable version of this player.
 
 
 In order to install and use this software follow below instruction
-> Be sure that "gcc" and "g++" compiler were installed suceessfully installed on your computer.
-> Be sure "curses" or "ncurses" libaray has installed on your system(For displaying).
+> Be sure that "g++ version 11" compiler were installed suceessfully installed on your computer.
+> Be sure "ncurses" libaray has installed on your system(For displaying).
 > Go to terminal.
 > cd "Path and folder".
-> make.
-For run program after compiling it write "./mp3" in a console.
+> make
+> sudo make install
+
+To uninstall CISAP just run this command in terminal.
+> sudo make uninstall
 
 The implicated tasks  that cisap can do are:
 > Play most common Audio formats such as Ogg,Mp3,Wav,...(Unfortunately Wma <Microsoft Windows Meda Audio> extesion is not supported in this program).
@@ -48,11 +51,15 @@ The options and key which are used in this program are:
 > In order to active/diactive 'Highpass' effect press "2".
 > In order to active/diactive 'Echo' effect press "3".
 > In order to active/diactive 'Flange' effect press "4".
-> In order to active/diactive 'Dist' effect press "5".
-> In order to active/diactive 'Chorous' effect press "6".
-> In order to active/diactive 'Parameq' effect press "7".
-> For forwarding song position press "Right arrow key".
-> For backwarding song position press "Left arrow key".
+> In order to active/diactive 'Dist' effect press "5" [Deprecated].
+> In order to active/diactive 'Chorous' effect press "6" [Deprecated].
+> In order to active/diactive 'Parameq' effect press "7" [Deprecated].
+> For seek forward 10 seconds press "Right arrow key".
+> For seek backward 10 seconds press "Left arrow key".
+> For seek forward 1 minute press "Up arrow key".
+> For seek backward 1 minute press "Down arrow key".
+> For seek forward 10 minutes press "Page up".
+> For seek backward 10 minutes press "Page down".
 > "--playlist PATH" argument is used to call playlist.
 > "--stream <url>" argument is used to play a song from network or internet.
 > "--loop NUMBER" argument is used to repeat song or playlist which was called before or will be called next.
@@ -62,7 +69,7 @@ The options and key which are used in this program are:
 
 
 TO DO
-> Moving cisap to new FMOD lib & change language from C to C++
+> Moving cisap to new FMOD lib & change language from C to C++ [Done]
 > Saving favourited song(s) from online streams to hard disk (Live stream downloader). [Delayed/Canceled]
 > Add play song(s) from Audio CD
 > Writing complete "man" page for program.
@@ -87,4 +94,4 @@ GNU General Public License for more details.  <http://www.gnu.org/licenses/>
 
 Author(s):
 
-© 2012-2015 Kasra Madadipouya <kasra@madadipouya.com>
+© 2012-2016 Kasra Madadipouya <kasra@madadipouya.com>

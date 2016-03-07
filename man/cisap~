@@ -90,28 +90,14 @@ Increase/decrease audio delay
 .B
 f
 .RS
-Reset audio delay.
+Reset audio deplay.
 .RE
 .P
 .B LEFT
 and
 .B RIGHT
 .RS
-Seek backward/forward 10 seconds.
-.RE
-.P
-.B UP
-and
-.B DOWN
-.RS
-Seek forward/backward 1 minute.
-.RE
-.P
-.B PGUP
-and
-.B PGDOWN
-.RS
-Seek forward/backward 10 minutes.
+Seek backward/forward 5 seconds.
 .RE
 .P
 .B SPACE
@@ -144,17 +130,17 @@ Activate/diactivate 'Echo' sound effect.
 Activate/diactivate 'Flange' sound effect.
 .RE
 .P
-.B 5 [Deprecated]
+.B 5
 .RS
 Activate/diactivate 'Dist' sound effect.
 .RE
 .P
-.B 6 [Deprecated]
+.B 6
 .RS
 Activate/diactivate 'Chorous' sound effect.
 .RE
 .P
-.B 7 [Deprecated]
+.B 7
 .RS
 Activate/diactivate 'Parameq' sound effect.
 .RE

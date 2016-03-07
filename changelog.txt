@@ -1,7 +1,14 @@
 ########################################
-#	  New changes in v0.1	       #
+#	  New changes in v0.2	       #
 ########################################
 
-- Updating FMOD Ex library to version 4.44.52.
-- Player loader screen.
+- Moved to FMOD 1.07.
+- Changed the code base to c++.
+- Rewriting all components.
+- Code refactoring.
+- Project restructuring.
+- Using Netbeans as default IDE.
+- Add new control keys.
+- Deprecating some sound effects.
 - Readme update.
+- Man page added.
