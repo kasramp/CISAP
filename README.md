@@ -11,7 +11,7 @@ To compile and deploy CISAP you are required to install following dependencies:
 You can install the above packages in Ubuntu using these commands:
 
 	$ sudo apt-get install g++-4.8
-	$ sudo apt-get install build-essentia
+	$ sudo apt-get install build-essential
 	$ sudo apt-get install libncurses-dev
 	$ sudo apt-get install libcurl4-gnutls-dev
 	$ sudo pip install livestreamer
