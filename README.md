@@ -7,6 +7,7 @@ To compile and deploy CISAP you are required to install following dependencies:
 * Make
 * Ncurses library
 * Curl library 
+
 You can install the above packages in Ubuntu using these commands:
 
 	$ sudo apt-get install g++-4.8
