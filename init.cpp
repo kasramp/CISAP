@@ -101,7 +101,7 @@ void Init::print_track_info(string path, FMOD::Sound *sound) {
     Init::track_separator();
     printw("FILE NAME = %s\n", file_name.c_str());
     Init::get_tag(sound);
-    //tracksep();
+    track_separator();
     printw("\n");
     refresh();
 }
