@@ -15,7 +15,7 @@
 
 #include "init.h"
 //const string Init::URL = "http://api.chartlyrics.com/apiv1.asmx/SearchLyricDirect?artist=";
-const string Init::URL = "localhost:8080/getSimpleLyric?artist=";
+const string Init::URL = "http://lyricextractor.herokuapp.com/getSimpleLyric?artist=";
 const string Init::ARTIST = "ARTIST";
 const string Init::TITLE = "TITLE";
 const string Init::BR_TAG = "<br>";
