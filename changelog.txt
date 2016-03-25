@@ -3,7 +3,7 @@
 ########################################
 
 - Moved to FMOD 1.07.
-- Changed the code base to c++.
+- Changed the codebase to c++.
 - Rewriting all components.
 - Code refactoring.
 - Project restructuring.
@@ -12,3 +12,4 @@
 - Deprecating some sound effects.
 - Readme update.
 - Man page added.
+- Display lyric feature added.

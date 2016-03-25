@@ -15,6 +15,8 @@
 
 #include <cstdlib>
 #include <iostream>
+#include <sstream>
+#include <stdio.h>
 #include "inc/init.h"
 #include "inc/parser.h"
 #include "inc/fmod.hpp"
@@ -26,6 +28,7 @@ using namespace std;
  */
 template <typename T>
 void _destruct(T arg);
+void lyric_display(string file_name, Init *init, string song, FMOD::Sound *sound);
 
 int main(int argc, char** argv) {
     static const char KEY_RIGHT_BRACKET = ']';
@@ -46,6 +49,7 @@ int main(int argc, char** argv) {
     static const char KEY_F = 'f';
     static const char KEY_Q = 'q';
     static const char KEY_M = 'm';
+    static const char KEY_W = 'w';
     static const char KEY_SPACE = ' ';
     static const unsigned int TEN_SECOND = 10000;
     static const unsigned int ONE_MINUTE = 60000;
@@ -54,10 +58,11 @@ int main(int argc, char** argv) {
     static const float DEFAULT_VOLUME = 1.0f;
     static const float DEFAULT_PAN = 0.0f;
     static float DEFAULT_FREQUENCY = 44100.00000003f;
+    string lyric;
     FMOD::System *system;
     FMOD::Sound *sound;
     FMOD::Channel *channel = 0;
-    FMOD::ChannelGroup *mastergroup   = 0; 
+    FMOD::ChannelGroup *mastergroup = 0;
     FMOD::DSP *dsp_low_pass = 0;
     FMOD::DSP *dsp_high_pass = 0;
     FMOD::DSP *dsp_echo = 0;
@@ -97,11 +102,12 @@ int main(int argc, char** argv) {
                 init->re_fresh();
                 system->setStreamBufferSize(BUFFER_SIZE, FMOD_TIMEUNIT_RAWBYTES);
                 result = system->getMasterChannelGroup(&mastergroup);
-                result = system->createSound(songs[i].c_str(), FMOD_LOOP_NORMAL | FMOD_2D |FMOD_CREATESTREAM, 0, &sound);
+                result = system->createSound(songs[i].c_str(), FMOD_LOOP_NORMAL | FMOD_2D | FMOD_CREATESTREAM, 0, &sound);
                 //(result);   
                 result = system->playSound(sound, 0, true, &channel);
                 channel->setLoopCount(0);
                 //ERRCHECK(result);
+                lyric = init->get_lyric(songs[i], sound);
                 init->print_track_info(songs[i], sound);
                 channel->setVolume(volume);
                 channel->setPaused(paused);
@@ -122,7 +128,7 @@ int main(int argc, char** argv) {
                 result = dsp_echo->setBypass(true);
                 result = dsp_flange->setBypass(true);
                 system->update();
-		sound->getLength(&lenms, FMOD_TIMEUNIT_MS);
+                sound->getLength(&lenms, FMOD_TIMEUNIT_MS);
                 //ERRCHECK(result);
                 do {
                     int ch = getch();
@@ -137,6 +143,8 @@ int main(int argc, char** argv) {
                         init->shut_down();
                         _destruct(init);
                         return 0;
+                    } else if (ch == KEY_W) {
+                        lyric_display(lyric, init, songs[i], sound);
                     } else if (ch == KEY_GREATER || ch == KEY_L) {
                         result = sound->release();
                         //ERRCHECK(result);
@@ -155,13 +163,13 @@ int main(int argc, char** argv) {
                         //ERRCHECK(result);
                     } else if (ch == KEY_PLUS) {
                         channel->getVolume(&volume);
-                        if((volume += 0.1f) > 1) {
+                        if ((volume += 0.1f) > 1) {
                             volume = 1.0;
                         }
                         channel->setVolume(volume);
                     } else if (ch == KEY_MINUS) {
                         channel->getVolume(&volume);
-                        if((volume -= 0.1f) < 0) {
+                        if ((volume -= 0.1f) < 0) {
                             volume = 0.0;
                         }
                         channel->setVolume(volume);
@@ -169,12 +177,12 @@ int main(int argc, char** argv) {
                         channel->getMute(&mute);
                         channel->setMute(!mute);
                     } else if (ch == KEY_RIGHT_BRACKET) {
-                        if((pan += 0.1f) > 1) {
+                        if ((pan += 0.1f) > 1) {
                             pan = 1.0;
                         }
                         channel->setPan(pan);
                     } else if (ch == KEY_LEFT_BRACKET) {
-                        if((pan -= 0.1f) < -1) {
+                        if ((pan -= 0.1f) < -1) {
                             pan = -1.0;
                         }
                         channel->setPan(pan);
@@ -222,46 +230,46 @@ int main(int argc, char** argv) {
                     } else if (ch == KEY_RIGHT) {
                         channel->getPosition(&ms, FMOD_TIMEUNIT_MS);
                         ms += TEN_SECOND;
-                        if(ms > lenms) {
+                        if (ms > lenms) {
                             result = sound->release();
                             break;
                         }
                         channel->setPosition(ms, FMOD_TIMEUNIT_MS);
                     } else if (ch == KEY_LEFT) {
                         channel->getPosition(&ms, FMOD_TIMEUNIT_MS);
-                        if(ms < TEN_SECOND) {
+                        if (ms < TEN_SECOND) {
                             ms = 0;
                         } else {
                             ms -= TEN_SECOND;
                         }
                         channel->setPosition(ms, FMOD_TIMEUNIT_MS);
-                    } else if(ch == KEY_UP) {
+                    } else if (ch == KEY_UP) {
                         channel->getPosition(&ms, FMOD_TIMEUNIT_MS);
                         ms += ONE_MINUTE;
-                        if(ms > lenms) {
+                        if (ms > lenms) {
                             result = sound->release();
                             break;
                         }
                         channel->setPosition(ms, FMOD_TIMEUNIT_MS);
-                    } else if(ch == KEY_DOWN) {
+                    } else if (ch == KEY_DOWN) {
                         channel->getPosition(&ms, FMOD_TIMEUNIT_MS);
-                        if(ms < ONE_MINUTE) {
+                        if (ms < ONE_MINUTE) {
                             ms = 0;
                         } else {
                             ms -= ONE_MINUTE;
                         }
                         channel->setPosition(ms, FMOD_TIMEUNIT_MS);
-                    } else if(ch == KEY_PPAGE) {
+                    } else if (ch == KEY_PPAGE) {
                         channel->getPosition(&ms, FMOD_TIMEUNIT_MS);
                         ms += TEN_MINUTE;
-                        if(ms > lenms) {
+                        if (ms > lenms) {
                             result = sound->release();
                             break;
                         }
                         channel->setPosition(ms, FMOD_TIMEUNIT_MS);
-                    } else if(ch == KEY_NPAGE) {
+                    } else if (ch == KEY_NPAGE) {
                         channel->getPosition(&ms, FMOD_TIMEUNIT_MS);
-                        if(ms < TEN_MINUTE) {
+                        if (ms < TEN_MINUTE) {
                             ms = 0;
                         } else {
                             ms -= TEN_MINUTE;
@@ -312,12 +320,12 @@ int main(int argc, char** argv) {
                         string str_loop = to_string(loop == 1 ? 0 : loop);
                         string str_remaining = to_string(loop - lp);
                         char str_volume[10];
-                        sprintf(str_volume,"%.1f",volume);
-                        printw("Effects : Lowpass[%c] Highpass[%c] Echo[%c] Flange[%c]\n\n", 
-                                dsp_low_pass_bypass   ? ' ' : 'x',
-                                dsp_high_pass_bypass  ? ' ' : 'x',
-                                dsp_echo_bypass      ? ' ' : 'x',
-                                dsp_flange_bypass    ? ' ' : 'x');
+                        sprintf(str_volume, "%.1f", volume);
+                        printw("Effects : Lowpass[%c] Highpass[%c] Echo[%c] Flange[%c]\n\n",
+                                dsp_low_pass_bypass ? ' ' : 'x',
+                                dsp_high_pass_bypass ? ' ' : 'x',
+                                dsp_echo_bypass ? ' ' : 'x',
+                                dsp_flange_bypass ? ' ' : 'x');
                         printw("Track number(s) %d : Current Track %d : Loop time(s) %s : Remain loop(s) %s\n\n", songs.size(), i + 1, loop > 0 ? str_loop.c_str() : "INF", loop > 0 ? str_remaining.c_str() : "INF");
                         printw("Time %02d:%02d:%02d/%02d:%02d:%02d : -%02d:%02d:%02d/%02d:%02d:%02d : %s : (%%%d) %s\n\n", ms / 1000 / 60, ms / 1000 % 60, ms / 10 % 100, lenms / 1000 / 60, lenms / 1000 % 60, lenms / 10 % 100, (lenms - ms) / 1000 / 60, (lenms - ms) / 1000 % 60, (lenms - ms) / 10 % 100, lenms / 1000 / 60, lenms / 1000 % 60, lenms / 10 % 100, starving ? "Buffering..." : paused ? "Paused      " : (!playing) ? "Stop        " : "Playing     ", percent, starving ? "STARVING" : "         ");
                         printw("Volume %s : Balance %.1f %s : Frequency %.1f(Hz)%s\n\n", mute == FALSE ? str_volume : "Mute", pan, ((unsigned) (pan * 1000000) == 0) ? "Center" : ((pan * 1000000) <= 0) ? "Left" : "Right", frequency, frequency == DEFAULT_FREQUENCY ? "Normal play" : frequency < DEFAULT_FREQUENCY ? "Slow play" : "Fast play");
@@ -340,8 +348,8 @@ int main(int argc, char** argv) {
         }
     } catch (...) {
     }
-    try { 
-        if(songs.size()>0) {
+    try {
+        if (songs.size() > 0) {
             sound->release();
         }
         result = system->close();
@@ -350,7 +358,7 @@ int main(int argc, char** argv) {
         //ERRCHECK(result);
         init->shut_down();
         _destruct(init);
-    } catch(...) {
+    } catch (...) {
     }
     return 0;
 }
@@ -358,4 +366,58 @@ int main(int argc, char** argv) {
 template <typename T>
 void _destruct(T arg) {
     delete arg;
+}
+
+void lyric_display(string lyric, Init *init, string song, FMOD::Sound *sound) {
+    WINDOW *p;
+    int y, x, i = 0, n = 0, flag = 1, flag1 = 0, ch;
+    string line;
+    istringstream f(lyric);
+    initscr();
+    clear();
+    refresh();
+    getmaxyx(stdscr, y, x);
+    while (std::getline(f, line)) {
+        if (line.length() > x) {
+            i += 2;
+        } else {
+            ++i;
+        }
+    }
+    i = i + (y - (i % y));
+    p = newpad(i, x);
+    curs_set(0);
+    waddstr(p, lyric.c_str());
+    prefresh(p, 0, 0, 0, 0, y - 1, x);
+    while (1) {
+        ch = getch();
+        if (ch == 'q' || ch == 'w') {
+            erase();
+            endwin();
+            refresh();
+            init->re_fresh();
+            init->print_track_info(song, sound);
+            refresh();
+            return;
+        } else if (ch == 'n' || ch == '>' || ch == KEY_DOWN) {
+            if (flag) {
+                n++;
+                if ((y * n) >= i) {
+                    flag = 0;
+                    n--;
+                }
+                prefresh(p, y*n, 0, 0, 0, y - 1, x);
+                flag1 = 1;
+            }
+        } else if (ch == 'p' || ch == '<' || ch == KEY_UP) {
+            if (flag1) {
+                n--;
+                if ((y * n) == 0) {
+                    flag1 = 0;
+                }
+                flag = 1;
+                prefresh(p, y*n, 0, 0, 0, y - 1, x);
+            }
+        }
+    }
 }

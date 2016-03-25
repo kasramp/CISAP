@@ -84,13 +84,19 @@ Balance speaker channel.
 and
 .B }
 .RS
-Increase/decrease audio delay
+Increase/decrease audio delay.
 .RE
 .P
 .B
 f
 .RS
 Reset audio delay.
+.RE
+.P
+.B
+w [New]
+.RS
+Display/hide lyric.
 .RE
 .P
 .B LEFT

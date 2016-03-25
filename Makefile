@@ -48,7 +48,7 @@ SOURCE_FILES = \
     common_platform.cpp \
     readm3u.cpp \
     parser.cpp \
-    init.cpp
+    init.cpp 
 
 INCLUDE_DIRS = \
     -Iinc
@@ -56,7 +56,7 @@ INCLUDE_DIRS = \
 LOWLEVEL_LIB = lib/${CPU}/libfmod${SUFFIX}.so
 
 all:
-	g++ --std=c++0x -pthread ${FLAGS} -o ${NAME} ${SOURCE_FILES} -Wl,-rpath=${LOWLEVEL_LIB} ${LOWLEVEL_LIB} ${INCLUDE_DIRS} -lncurses
+	g++ --std=c++0x -pthread ${FLAGS} -o ${NAME} ${SOURCE_FILES} -Wl,-rpath=${LOWLEVEL_LIB} ${LOWLEVEL_LIB} ${INCLUDE_DIRS} -lncurses -lcurl
 install:
 	cp cisap /usr/bin/
 	cp -r lib/${CPU}/* /lib/
