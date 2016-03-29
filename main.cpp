@@ -54,7 +54,7 @@ int main(int argc, char** argv) {
     static const unsigned int TEN_SECOND = 10000;
     static const unsigned int ONE_MINUTE = 60000;
     static const unsigned int TEN_MINUTE = ONE_MINUTE * 10;
-    static const unsigned int BUFFER_SIZE = 64 * 1024;
+    static const unsigned int BUFFER_SIZE = 64 * 2048;
     static const float DEFAULT_VOLUME = 1.0f;
     static const float DEFAULT_PAN = 0.0f;
     static float DEFAULT_FREQUENCY = 44100.00000003f;
@@ -77,6 +77,7 @@ int main(int argc, char** argv) {
     vector<string> songs;
     Init* init = new Init();
     Parser* parser = new Parser();
+    srand(time(NULL));
     try {
         //Common_Init(&extradriverdata);
         result = FMOD::System_Create(&system);
@@ -99,15 +100,14 @@ int main(int argc, char** argv) {
         init->intro_print();
         while (loop != lp++) {
             for (int i = 0; i < songs.size(); i++) {
+                lyric = "";
                 init->re_fresh();
                 system->setStreamBufferSize(BUFFER_SIZE, FMOD_TIMEUNIT_RAWBYTES);
                 result = system->getMasterChannelGroup(&mastergroup);
                 result = system->createSound(songs[i].c_str(), FMOD_LOOP_NORMAL | FMOD_2D | FMOD_CREATESTREAM, 0, &sound);
-                //(result);   
                 result = system->playSound(sound, 0, true, &channel);
                 channel->setLoopCount(0);
                 //ERRCHECK(result);
-                lyric = init->get_lyric(songs[i], sound);
                 init->print_track_info(songs[i], sound);
                 channel->setVolume(volume);
                 channel->setPaused(paused);
@@ -144,8 +144,16 @@ int main(int argc, char** argv) {
                         _destruct(init);
                         return 0;
                     } else if (ch == KEY_W) {
+                        clear();
+                        refresh();
+                        printw("Please wait, retrieving lyric...");
+                        refresh();
+                        if (!lyric.length() > 0) {
+                            lyric = init->get_lyric(songs[i], sound);
+                        }
                         lyric_display(lyric, init, songs[i], sound);
                     } else if (ch == KEY_GREATER || ch == KEY_L) {
+                        channel->stop();
                         result = sound->release();
                         //ERRCHECK(result);
                         break;

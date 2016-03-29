@@ -16,6 +16,7 @@
 #ifndef PARSER_H
 #define PARSER_H
 
+#include <algorithm>
 #include <iostream>
 #include <vector>
 #include <string>
@@ -35,12 +36,15 @@ public:
 private:
     int loop;
     bool is_help;
+    bool is_shuffle;
     vector<string> songs;
     vector<string> argv_vector;
+    void shuffle(bool is_shuffle);
     static const string LOOP;
     static const string PLAY_LIST;
     static const string STREAM;
     static const string HELP;
+    static const string SHUFFLE;
 };
 #endif /* PARSER_H */
 

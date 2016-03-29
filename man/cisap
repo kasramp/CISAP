@@ -44,6 +44,12 @@ means infinite loop.
 is invalid value and player does not play. By default the player loop is off.
 .RE
 .P
+.B --shuffle 
+[New]
+.RS
+Randomly play songs
+.RE
+.P
 .B --help
 .RS
 Shows help page

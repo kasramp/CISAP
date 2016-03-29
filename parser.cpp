@@ -18,6 +18,7 @@ const string Parser::LOOP = "--loop";
 const string Parser::PLAY_LIST = "--playlist";
 const string Parser::STREAM = "--stream";
 const string Parser::HELP = "--help";
+const string Parser::SHUFFLE = "--shuffle";
 
 void Parser::parse(int argc, char** argv) {
     argv_vector = Parser::construct_vector_from_argv(argc, argv);
@@ -48,10 +49,13 @@ void Parser::parse(int argc, char** argv) {
         } else if (!argv_vector[i].compare(HELP)) {
             is_help = true;
             break;
+        } else if(!argv_vector[i].compare(SHUFFLE)) {
+			is_shuffle = true;
         } else {
             songs.push_back(argv_vector[i]);
         }
     }
+    shuffle(is_shuffle);
 }
 
 vector<string> Parser::construct_vector_from_argv(int argc, char** argv) {
@@ -65,6 +69,12 @@ vector<string> Parser::construct_vector_from_argv(int argc, char** argv) {
     } catch (...) {
     }
     return argv_vector;
+}
+
+void Parser::shuffle(bool is_shuffle) {
+	if(is_shuffle) {
+		std::random_shuffle(Parser::songs.begin(), Parser::songs.end());
+	}
 }
 
 int Parser::get_loop() {

@@ -27,6 +27,7 @@ void Init::print_help() {
     cout << " --playlist <.m3u>\tplaying from list" << endl;
     cout << " --stream <url>\t\tplaying from stream" << endl;
     cout << " --loop <number>\tloop playback <number> times.  -1 means forever" << endl;
+    cout << " --loop\t\t\trandomly play songs [New]" << endl;
     cout << " --help\t\t\tshow help page" << endl;
     cout << endl;
     cout << "Basic keys:" << endl;
@@ -37,7 +38,7 @@ void Init::print_help() {
     cout << " p\t\t\tbalance speaker channel" << endl;
     cout << " { or }\t\t\tincrease/decrease audio delay" << endl;
     cout << " f\t\t\treset audio delay" << endl;
-    cout << " w\t\t\tdisplay/hide lyric" << endl;
+    cout << " w\t\t\tdisplay/hide lyric [New]" << endl;
     cout << " <- or ->\t\tseek backward/forward 10 seconds" << endl;
     cout << " down or up\t\tseek backward/forward 1 minute" << endl;
     cout << " pgdown or pgup\t\tseek backward/forward 10 minutes" << endl;

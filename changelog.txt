@@ -1,5 +1,5 @@
 ########################################
-#	  New changes in v0.2	       #
+#	  New changes in v0.2	           #
 ########################################
 
 - Moved to FMOD 1.07.
@@ -13,3 +13,7 @@
 - Readme update.
 - Man page added.
 - Display lyric feature added.
+- Add shuffle switch.
+- Some enhancements on display lyric function.
+- Change compiler to C++ 14
+
