@@ -12,10 +12,10 @@
  * Author(s):
  * © 2016 Kasra Madadipouya <kasra@madadipouya.com>
  */
-
+ 
 #include "init.h"
-//const string Init::URL = "http://api.chartlyrics.com/apiv1.asmx/SearchLyricDirect?artist=";
-const string Init::URL = "http://lyricextractor.herokuapp.com/getSimpleLyric?artist=";
+
+const string Init::URL = "http://elixirlyrics-kasramp.rhcloud.com/getSimpleLyric?artist=";
 const string Init::ARTIST = "ARTIST";
 const string Init::TITLE = "TITLE";
 const string Init::BR_TAG = "<br>";
@@ -220,12 +220,12 @@ string Init::call_lyric_service(string artist, string song_name) {
         CURL* curl;
         string lyric;
         string service_result;
-        artist.erase(std::remove(artist.begin(), artist.end(), ' '), artist.end());
-        song_name.erase(std::remove(song_name.begin(), song_name.end(), ' '), song_name.end());
+        //artist.erase(std::remove(artist.begin(), artist.end(), ' '), artist.end());
+        //song_name.erase(std::remove(song_name.begin(), song_name.end(), ' '), song_name.end());
         //artist.erase(remove_if(artist.begin(), artist.end(), isspace), artist.end());
         //song_name.erase(remove_if(song_name.begin(), song_name.end(), isspace), song_name.end());
-        //replace(artist.begin(), artist.end(), ' ', ''); // replace all 'space' to '%'
-        //replace(song_name.begin(), song_name.end(), ' ', ''); // replace all 'space' to '%'
+        replace(artist.begin(), artist.end(), ' ', '+'); // replace all 'space' to '%'
+        replace(song_name.begin(), song_name.end(), ' ', '+'); // replace all 'space' to '%'
         curl_global_init(CURL_GLOBAL_ALL);
         curl = curl_easy_init();
         string end_url = Init::URL + artist + "&song=" + song_name;

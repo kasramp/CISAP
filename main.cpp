@@ -119,10 +119,10 @@ int main(int argc, char** argv) {
                 result = system->createDSPByType(FMOD_DSP_TYPE_HIGHPASS, &dsp_high_pass);
                 result = system->createDSPByType(FMOD_DSP_TYPE_ECHO, &dsp_echo);
                 result = system->createDSPByType(FMOD_DSP_TYPE_FLANGE, &dsp_flange);
-                result = mastergroup->addDSP(0, dsp_low_pass);
-                result = mastergroup->addDSP(0, dsp_high_pass);
-                result = mastergroup->addDSP(0, dsp_echo);
-                result = mastergroup->addDSP(0, dsp_flange);
+                //result = mastergroup->addDSP(0, dsp_low_pass);
+                //result = mastergroup->addDSP(0, dsp_high_pass);
+                //result = mastergroup->addDSP(0, dsp_echo);
+                //result = mastergroup->addDSP(0, dsp_flange);
                 result = dsp_low_pass->setBypass(true);
                 result = dsp_high_pass->setBypass(true);
                 result = dsp_echo->setBypass(true);
@@ -154,7 +154,7 @@ int main(int argc, char** argv) {
                         lyric_display(lyric, init, songs[i], sound);
                     } else if (ch == KEY_GREATER || ch == KEY_L) {
                         channel->stop();
-                        result = sound->release();
+                        //result = sound->release();
                         //ERRCHECK(result);
                         break;
                     } else if (ch == KEY_LESS || ch == KEY_H) {
@@ -230,10 +230,13 @@ int main(int argc, char** argv) {
                         ERRCHECK(result);
                     } else if (ch == KEY_FOUR) {
                         bool bypass;
-                        result = dsp_flange->getBypass(&bypass);
+                        //dsp_flange->getActive()
+                        dsp_flange->getActive(&bypass);
+                        //result = dsp_flange->getBypass(&bypass);
                         ERRCHECK(result);
                         bypass = !bypass;
-                        result = dsp_flange->setBypass(bypass);
+                        dsp_flange->setActive(bypass);
+                        //result = dsp_flange->setBypass(bypass);
                         ERRCHECK(result);
                     } else if (ch == KEY_RIGHT) {
                         channel->getPosition(&ms, FMOD_TIMEUNIT_MS);
