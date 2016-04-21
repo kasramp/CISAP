@@ -14,7 +14,6 @@ You can install the above packages in Ubuntu using these commands:
 	$ sudo apt-get install build-essential
 	$ sudo apt-get install libncurses-dev
 	$ sudo apt-get install libcurl4-gnutls-dev
-	$ sudo pip install livestreamer
 
 ## How to use
 To install and use CISAP you need to run below commands:
@@ -33,6 +32,8 @@ For getting list of hotkeys and user manual please refer to CISAP man page.
 - [X] Moving CISAP to new FMOD lib and code refactoring
 - [X] Writing complete "man" page for program
 - [X] Lyric display feature [DONE]
+- [X] Adding accoustic identification and suggestion to fix the tags
+- [ ] Add an option to read songs from sub directories
 - [ ] Add play song(s) from Audio CD
 - [ ] Making GUI
 
