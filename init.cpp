@@ -15,7 +15,7 @@
  
 #include "init.h"
 
-const string Init::URL = "http://elixirlyrics-kasramp.rhcloud.com/getSimpleLyric?artist=";
+const string Init::URL = "http://elixirlyrics-api.madadipouya.com/getSimpleLyric?artist=";
 const string Init::ARTIST = "ARTIST";
 const string Init::TITLE = "TITLE";
 const string Init::BR_TAG = "<br>";
