@@ -11,7 +11,7 @@ cisap \- play audio MPEG 1.0/2.0/2.5 stream (layers 1, 2 and 3)
 stands for Cisap Is A Simple Player (CISAP)
 .P
 .B cisap
-is a simple command audio player that provides many facilities to play various types of audio files from your Linux terminal/command line. It has been developed with C programming language (GCC) and it utilizes FMOD library version 4.40 as its core engine to decode audio files. For command line interface Ncurses library is used.   
+is a simple command audio player that provides many facilities to play various types of audio files from your Linux terminal/command line. It has been developed with C++ programming language (g++) and it utilizes FMOD library version 4.40 as its core engine to decode audio files. For command line interface Ncurses library is used.   
 .P
 .B cisap
 reads one or more files or URLs and plays them on the audio device (default) or outputs them to stdout. File/URL is assumed to be an MPEG audio bit stream.
@@ -47,7 +47,7 @@ is invalid value and player does not play. By default the player loop is off.
 .B --shuffle 
 [New]
 .RS
-Randomly play songs
+Plays songs in random order
 .RE
 .P
 .B --help
@@ -136,22 +136,22 @@ Pause or continue.
 Stop playing and quit program.
 .RE
 .P
-.B 1
+.B 1 [Deprecated]
 .RS
 Activate/diactivate 'Lowpass' sound effect.
 .RE
 .P
-.B 2
+.B 2 [Deprecated]
 .RS
 Activate/diactivate 'Highpass' sound effect.
 .RE
 .P
-.B 3
+.B 3 [Deprecated]
 .RS
 Activate/diactivate 'Echo' sound effect.
 .RE
 .P
-.B 4
+.B 4 [Deprecated]
 .RS
 Activate/diactivate 'Flange' sound effect.
 .RE

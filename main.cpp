@@ -28,7 +28,8 @@ using namespace std;
  */
 template <typename T>
 void _destruct(T arg);
-void lyric_display(string file_name, Init *init, string song, FMOD::Sound *sound);
+void lyric_display(string file_name, Init *init, string song, 
+        FMOD::Sound *sound, FMOD::Channel *channel);
 
 int main(int argc, char** argv) {
     static const char KEY_RIGHT_BRACKET = ']';
@@ -151,7 +152,7 @@ int main(int argc, char** argv) {
                         if (!lyric.length() > 0) {
                             lyric = init->get_lyric(songs[i], sound);
                         }
-                        lyric_display(lyric, init, songs[i], sound);
+                        lyric_display(lyric, init, songs[i], sound, channel);
                     } else if (ch == KEY_GREATER || ch == KEY_L) {
                         channel->stop();
                         //result = sound->release();
@@ -379,9 +380,10 @@ void _destruct(T arg) {
     delete arg;
 }
 
-void lyric_display(string lyric, Init *init, string song, FMOD::Sound *sound) {
+void lyric_display(string lyric, Init *init, string song, FMOD::Sound *sound, FMOD::Channel *channel) {
     WINDOW *p;
     int y, x, i = 0, n = 0, flag = 1, flag1 = 0, ch;
+    unsigned int ms;
     string line;
     istringstream f(lyric);
     initscr();
@@ -410,6 +412,22 @@ void lyric_display(string lyric, Init *init, string song, FMOD::Sound *sound) {
             init->print_track_info(song, sound);
             refresh();
             return;
+        } else if (ch == KEY_RIGHT) {
+            channel->getPosition(&ms, FMOD_TIMEUNIT_MS);
+            ms += 10000;
+            channel->setPosition(ms, FMOD_TIMEUNIT_MS);
+        } else if(ch == KEY_LEFT) {
+            channel->getPosition(&ms, FMOD_TIMEUNIT_MS);
+            if (ms < 10000) {
+                ms = 0;
+            } else {
+                ms -= 10000;
+            }
+            channel->setPosition(ms, FMOD_TIMEUNIT_MS);
+        } else if (ch == ' ') {
+            bool paused;
+            FMOD_RESULT result = channel->getPaused(&paused);
+            result = channel->setPaused(!paused);
         } else if (ch == 'n' || ch == '>' || ch == KEY_DOWN) {
             if (flag) {
                 n++;
