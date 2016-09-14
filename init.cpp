@@ -38,7 +38,7 @@ void Init::print_help() {
     cout << " p\t\t\tbalance speaker channel" << endl;
     cout << " { or }\t\t\tincrease/decrease audio delay" << endl;
     cout << " f\t\t\treset audio delay" << endl;
-    cout << " w\t\t\tdisplay/hide lyric [New]" << endl;
+    cout << " w\t\t\tdisplay/hide lyrics [New]" << endl;
     cout << " <- or ->\t\tseek backward/forward 10 seconds" << endl;
     cout << " down or up\t\tseek backward/forward 1 minute" << endl;
     cout << " pgdown or pgup\t\tseek backward/forward 10 minutes" << endl;
@@ -118,7 +118,7 @@ string Init::get_lyric(string path, FMOD::Sound* sound) {
                 return lyric;
             }
         }
-        return "Lyric not found";
+        return "Lyrics not found";
     } catch (...) {
     }
 }
@@ -238,7 +238,7 @@ string Init::call_lyric_service(string artist, string song_name) {
         if (service_result.length() > 0) {
             lyric = Init::trim_lyric(service_result);
         } else {
-            lyric = "Lyric not found";
+            lyric = "Lyrics not found";
         }
         return lyric;
     } catch (...) {

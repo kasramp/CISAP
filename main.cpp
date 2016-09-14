@@ -147,7 +147,7 @@ int main(int argc, char** argv) {
                     } else if (ch == KEY_W) {
                         clear();
                         refresh();
-                        printw("Please wait, retrieving lyric...");
+                        printw("Please wait, retrieving lyrics...");
                         refresh();
                         if (!lyric.length() > 0) {
                             lyric = init->get_lyric(songs[i], sound);

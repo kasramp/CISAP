@@ -102,7 +102,7 @@ Reset audio delay.
 .B
 w [New]
 .RS
-Display/hide lyric.
+Display/hide lyrics.
 .RE
 .P
 .B LEFT
