@@ -58,4 +58,4 @@ GNU General Public License for more details.  <http://www.gnu.org/licenses/>
 
 Author(s):
 
-© 2012-2016 Kasra Madadipouya <kasra@madadipouya.com>
+© 2012-2017 Kasra Madadipouya <kasra@madadipouya.com>
