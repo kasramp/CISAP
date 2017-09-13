@@ -9,7 +9,7 @@
 title: CISAP
 description: > # this means to ignore newlines until "baseurl:"
   CISAP Is Simple Audio Player
-repository: https://github.com/wemake-services/jekyll-theme-hackcss
+repository: https://github.com/kasramp/CISAP
 baseurl:   # the subpath of your site, e.g. /blog
 url: http://cisap.madadipouya.com/  # the base hostname & protocol for your site
 
