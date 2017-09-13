@@ -1,0 +1,66 @@
+---
+layout: default
+---
+
+<div>
+
+  <section>
+    <h1>CISAP</h1>
+    <p>
+      CISAP Is Simple Audio Player
+    </p>
+  </section>
+
+  <section>
+    <h2>What is CISAP?</h2>
+    <p>
+      <code>CISAP</code> is a simple command line audio player that can play variety of file formats, online streams with fetching lyrics facility. CISAP previously developed with C programming language (GCC) and used FMOD library version 4.40 to decode audio files. The code re-factored in 2016 and released as <a href="https://github.com/kasramp/CISAP">v0.2</a>. The entire codebase moved to C++ 11 with updated version of FMOD lib (1.07).
+    </p>
+  </section>
+
+  <section>
+    <h2>Installation</h2>
+    <p>
+      Before proceeding with the installation make sure that you have the following dependencies installed:
+      <ul>
+        <li>C++ 11 (g++)</li>
+        <li>Make</li>
+        <li>Ncurses Library</li>
+        <li>Curl Library</li>
+      </ul>
+      In Ubuntu you can install the dependencies easily via <code>apt-get</code>:
+
+      <ul>
+          <li><code>$ sudo apt-get install g++-4.8</code></li>
+          <li><code>$ sudo apt-get install build-essential</code></li>
+          <li><code>$ sudo apt-get install libncurses-dev</code></li>
+          <li><code>$ sudo apt-get install libcurl4-gnutls-dev</code></li>
+      </ul>
+    </p>
+    <p>
+    To install and use CISAP you need to run below commands:
+     <ul>
+         <li><code>git clone https://github.com/kasramp/CISAP.git</code></li>
+         <li><code>cd CISAP</code></li>
+         <li><code>make</code></li>
+         <li><code>sudo make install</code></li>
+     </ul>
+    </p>
+  </section>
+
+  <section>
+    <h2>Remove</h2>
+    <p>
+    To remove <code>CISAP</code> just go to the git directory and run the following command:<br />
+    <code>$ sudo make uninstall</code>
+    </p>
+  </section>
+
+  <section>
+    <h2>Get Started</h2>
+
+    <p>
+    To get started with <code>CISAP</code>, just type <code>man cisap</code> in command line to know about the shortcuts and commands.
+    </p>
+  </section>
+</div>

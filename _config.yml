@@ -1,0 +1,50 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: CISAP
+description: > # this means to ignore newlines until "baseurl:"
+  CISAP Is Simple Audio Player
+repository: https://github.com/wemake-services/jekyll-theme-hackcss
+baseurl:   # the subpath of your site, e.g. /blog
+url: http://cisap.madadipouya.com/  # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+
+# Sass settings
+sass:
+  style: compressed
+
+# Theme settings
+theme_mode: dark  # choices are: 'dark', 'standard', 'markdown'
+
+# Customizations
+your_name: Kasra Madadipouya
+email: kasra@madadipouya.com
+
+navigation:
+  - text: Home
+    url: /
+
+projects:
+  - name: CISAP Is Simple Audio Player
+    description: CISAP is a simple command line audio player that can play variety of file formats, online streams with fetching lyrics facility.
+    link: https://github.com/kasramp/CISAP
+    image: https://github.com/sobolevn/git-secret/blob/7c9ae0b1853d4c15549027524121b9e40219fe47/images/git-secret-sm.png?raw=true
+
+social:
+  - service: github
+    username: kasramp
+    link: https://github.com/kasramp
+  - service: twitter
+    username: kasra_mp
+    link: https://twitter.com/kasra_mp
+
+# Plugins
+gems:
+  - jekyll-seo-tag
