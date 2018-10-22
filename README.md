@@ -39,7 +39,7 @@ For getting list of hotkeys and user manual please refer to CISAP man page.
 
 ## Screenshot
 <p align="center">
-<img src="http://blog.madadipouya.com/wp-content/uploads/2014/07/Screenshot-kixz@debian-GIT-repos-CISAP-GIT-CISAP.png" alt="Drawing"/>
+<img src="https://user-images.githubusercontent.com/4501120/47316270-046bdd00-d647-11e8-8bfb-491ac37cdb91.png" alt="CISAP"/>
 </p>
 
 ## Contact
@@ -58,4 +58,4 @@ GNU General Public License for more details.  <http://www.gnu.org/licenses/>
 
 Author(s):
 
-© 2012-2017 Kasra Madadipouya <kasra@madadipouya.com>
+© 2012-2018 Kasra Madadipouya <kasra@madadipouya.com>
