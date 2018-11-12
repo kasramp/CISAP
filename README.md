@@ -44,7 +44,6 @@ For getting list of hotkeys and user manual please refer to CISAP man page.
 
 ## Contact
 * kasra@madadipouya.com
-* kasra_mp@live.com
 
 ## License
 CISAP is free software; you can redistribute it and/or modify
